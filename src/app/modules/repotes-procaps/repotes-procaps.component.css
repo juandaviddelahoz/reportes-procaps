@@ -1,0 +1,60 @@
+.green-border {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+.red-border {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+table {
+    width: 100%;
+}
+
+tr.element-row:hover {
+    background: whitesmoke;
+}
+
+.mat-spinner {
+    position: relative;
+    margin-left: 45%;
+    margin-right: 50%;
+    margin-top: 0.9%;
+    margin-bottom: 0.9%;
+}
+
+select {
+    cursor: pointer;
+}
+
+option {
+    cursor: pointer;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.example-full-width {
+    width: 100%;
+    margin-bottom: -15px;
+    margin-top: -5px;
+}
+
+.card-body {
+    padding: 1em 2em 0.2em 2em;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.6em 0 0.8em 0;
+}
+
+h6 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
