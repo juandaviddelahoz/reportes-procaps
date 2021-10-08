@@ -12,6 +12,7 @@ import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertFechainimayorComponent } from '../alert/alert-fechainimayor/alert-fechainimayor.component';
 import { AlertNoregistrosComponent } from '../alert/alert-noregistros/alert-noregistros.component';
+import { AlertErrorComponent } from '../alert/alert-error/alert-error.component';
 
 interface ListCodClientes {
   idCodCliete: string;
@@ -124,6 +125,11 @@ export class RepotesProcapsComponent implements OnInit {
     this.dialogRef.open(AlertNoregistrosComponent);
   }
 
+  // Alert Error
+  openDialogError() {
+    this.dialogRef.open(AlertErrorComponent);
+  }
+
   ngOnInit(): void {
     this.iniciarFormulario();
     const currentYear = new Date().getFullYear();
@@ -171,6 +177,7 @@ export class RepotesProcapsComponent implements OnInit {
         if (data.length === 0) {
           this.openDialogNoRegistros();
           this.btnExportDisabled = true;
+          this.dataSource.data = [];
         } else {
           console.log(data.length);
           //this.listClientes = data;
@@ -184,6 +191,9 @@ export class RepotesProcapsComponent implements OnInit {
         this.mostrarCarga = false;
 
       }, error => {
+        this.btnDisabled = false;
+        this.mostrarCarga = false;
+        this.openDialogError()
         console.log(error);
       })
     }

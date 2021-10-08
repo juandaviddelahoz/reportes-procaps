@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { AlertFechainimayorComponent } from './alert/alert-fechainimayor/alert-fechainimayor.component';
 import { AlertNoregistrosComponent } from './alert/alert-noregistros/alert-noregistros.component';
+import { AlertErrorComponent } from './alert/alert-error/alert-error.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AlertNoregistrosComponent } from './alert/alert-noregistros/alert-noreg
     DashboardComponent,
     RepotesProcapsComponent,
     AlertFechainimayorComponent,
-    AlertNoregistrosComponent
+    AlertNoregistrosComponent,
+    AlertErrorComponent
   ],
   imports: [
     CommonModule,
