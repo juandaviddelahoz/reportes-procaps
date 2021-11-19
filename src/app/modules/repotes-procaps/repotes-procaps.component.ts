@@ -57,9 +57,10 @@ export class RepotesProcapsComponent implements OnInit {
   // clienteControl = new FormControl('', [Validators.required]);
 
   listCodClientes: ListCodClientes[] = [
-    { idCodCliete: '16970', name: 'Procaps' },
-    { idCodCliete: '38452', name: 'Diabetrics' },
-    { idCodCliete: '16906', name: 'CI Procaps' },
+    { idCodCliete: '16970',     name: 'Procaps' },
+    { idCodCliete: '38452',     name: 'Diabetrics' },
+    { idCodCliete: '16906',     name: 'CI Procaps' },
+    { idCodCliete: '10004681',  name: 'Funtrition S.A.S'}
   ];
 
   // Formato Datepicker
@@ -172,6 +173,8 @@ export class RepotesProcapsComponent implements OnInit {
         fechaFin: this.formatFechaF + this.horaFin,
       }
 
+      console.log(datosConsulta);
+
       // Consulta servicio
       this._reportesprocapsServices.getListClientes(datosConsulta, 'consulta').subscribe(data => {
         if (data.length === 0) {
@@ -179,7 +182,7 @@ export class RepotesProcapsComponent implements OnInit {
           this.btnExportDisabled = true;
           this.dataSource.data = [];
         } else {
-          console.log(data.length);
+          console.log(data);
           //this.listClientes = data;
           this.listClientesExcel = data;
           
